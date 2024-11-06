@@ -1,0 +1,25 @@
+{
+    "folders": [
+        {
+            "path": "../../../../../../../Users/gat/work/mp4-tasks"
+        },
+        {
+            "path": "../../../../../../../Users/gat/work/vivaria"
+        },
+        {
+            "path": "../."
+        },
+        {
+            "path": "../../../../../../../Users/gat/.config/viv-cli"
+        },
+        {
+            "path": "../../../../../Cellar/vivaria/0.1.4"
+        }
+    ],
+    "settings": {
+        "workbench.colorCustomizations": {
+            "editor.lineHighlightBackground": "#1073cf2d",
+            "editor.lineHighlightBorder": "#9fced11f"
+        }
+    }
+}
