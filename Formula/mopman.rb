@@ -1,11 +1,12 @@
 require "English"
-class MopMan < Formula
+class Mopman < Formula
   include Language::Python::Virtualenv
   desc "Packet making tool for AIS University Groups (currently tailored for CBAI's AirTable)"
   homepage "https://github.com/GatlenCulp/MopMan_Packetmaker"
+  version "0.1.0"
   # Stable release
-  url "https://github.com/GatlenCulp/MopMan_Packetmaker",
-    using:    :git
+#   url "https://github.com/GatlenCulp/MopMan_Packetmaker",
+#     using:    :git
     # tag:      "v0.2.0",
     # revision: "f92973a018948a93f15a8c869c4291cddb56faf6"
   license "MIT"
