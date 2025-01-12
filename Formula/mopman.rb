@@ -2,7 +2,7 @@ require "English"
 class Mopman < Formula
   include Language::Python::Virtualenv
   desc "Packet making tool for AIS University Groups (currently tailored for CBAI's AirTable)"
-  homepage "https://github.com/GatlenCulp/MopMan_Packetmaker"
+  homepage "https://github.com/GatlenCulp/MopMan_Packetmaker.git"
   version "0.1.0"
   # Stable release
 #   url "https://github.com/GatlenCulp/MopMan_Packetmaker",
@@ -11,13 +11,18 @@ class Mopman < Formula
     # revision: "f92973a018948a93f15a8c869c4291cddb56faf6"
   license "MIT"
   # Development release
-  head "https://github.com/GatlenCulp/MopMan_Packetmaker",
+  head "https://github.com/GatlenCulp/MopMan_Packetmaker.git",
     branch: "main"
 
   # Automatically check for new versions
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
+  resource "airtable" do
+    url "https://files.pythonhosted.org/packages/6c/e6/da9c7438fbb4100eb915fca9c431df5c60614a1debf5da899c9d2d7adb68/airtable-0.4.8.tar.gz"
+    sha256 "fb667e55da3af1341e0f2946014cc29e7d0613e69f3ee20528051c4075aee75c"
   end
 
   # docker compose is required for running task environments, but not included in deps.
@@ -33,21 +38,15 @@ class Mopman < Formula
 
   def install
     # Install documentation
-    doc.install Dir["docs/*"]
     doc.install "README.md"
     doc.install "LICENSE"
-    doc.install "CONTRIBUTING.md"
     # Install dependencies and the CLI in a virtualenv
     venv = virtualenv_create(libexec/"venv", "python3.11")
     venv.pip_install resources
-    venv.pip_install buildpath/"cli"
-    # bin.install libexec / "venv/bin/viv"
+    venv.pip_install buildpath/"src"
     # Clean up unnecessary directories
-    rm_r ".devcontainer"
-    rm_r ".github"
     rm_r ".vscode"
-    rm_r "cli"
-    rm_r "docs"
+    rm_r "imgs"
     rm_r "ignore"
     # Copy remaining files to mopman directory
     src_dir = prefix/"mopman"

@@ -10,6 +10,12 @@
     "explorerExclude.backup": {},
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#1073cf2d",
-        "editor.lineHighlightBorder": "#9fced11f"
+        "editor.lineHighlightBorder": "#9fced11f",
+        "statusBar.background": "#28632b",
+        "statusBar.foreground": "#ffffff",
+        "statusBarItem.hoverBackground": "#327e36",
+        "activityBar.background": "#0B3609",
+        "titleBar.activeBackground": "#104B0C",
+        "titleBar.activeForeground": "#F2FDF1"
     },
 }
